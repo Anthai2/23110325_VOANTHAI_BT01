@@ -1,16 +1,16 @@
-import db from "../models/index"; //import database
+import User from "../models/user"; //import database Mongoose
 import CRUDService from "../services/CRUDService"; //import service
 
 //hàm getHomePage
 let getHomePage = async (req, res) => {
   //return res.send('Nguyễn Hữu Trung');
   try {
-    let data = await db.User.findAll(); //lấy dữ liệu từ models/index
+    let data = await User.find().lean(); //lấy dữ liệu từ MongoDB
     console.log("..................................");
     console.log(data);
     console.log("..................................");
-    return res.render("homepage.ejs", {
-      data: JSON.stringify(data), //trả dữ liệu data về view
+    return res.render("users/findAllUser.ejs", {
+      datalist: data, //trả dữ liệu data về view
     });
   } catch (e) {
     console.log(e);

@@ -113,7 +113,7 @@
 <div class="container">
   <div class="header-section">
     <h2>Danh Sách Người Dùng</h2>
-    <a href="/crud" class="add-btn">+ Add New User</a>
+    <a href="/crud" class="add-btn">Add New User</a>
   </div>
 
   <% if (datalist && datalist.length > 0) { %>
@@ -135,8 +135,8 @@
           <td><%= datalist[i].lastName %></td>
           <td><%= datalist[i].address %></td>
           <td class="action-links">
-            <a href="/edit-crud?id=<%= datalist[i].id %>">Edit</a>
-            <a href="/delete-crud?id=<%= datalist[i].id %>">Delete</a>
+            <a href="/edit-crud?id=<%= datalist[i]._id %>">Edit</a>
+            <a href="/delete-crud?id=<%= datalist[i]._id %>">Delete</a>
           </td>
         </tr>
         <% } %>
